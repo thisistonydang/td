@@ -10,8 +10,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "td",
 	Short: "Shortcuts for frequently used commands",
-	Long: `td provides shortcuts for frequently used commands. 
-	       Source code available at https://github.com/thisistonydang/td`,
+	Long:  "td provides shortcuts for frequently used commands.",
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
 	},
