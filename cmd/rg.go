@@ -26,7 +26,7 @@ scope efficiently. If no file extensions are provided, all files types will be s
   td rg go,ts,ex multiple_comma_separated_extensions
   td rg go "string with spaces"
 `,
-	Args: cobra.ExactArgs(2),
+	Args: cobra.MatchAll(cobra.MinimumNArgs(1), cobra.MaximumNArgs(2)),
 	Run: func(cmd *cobra.Command, args []string) {
 		search(args[0], args[1])
 	},
