@@ -20,9 +20,8 @@ var rgCmd = &cobra.Command{
 optionally filtered by file extensions. Returns a list of matching filenames rather than file contents, 
 making it ideal for quickly locating files that contain specific code or text patterns.
 
-Supports single extensions (go) or multiple comma-separated extensions (go,ts,ex) to narrow your search scope efficiently.
-
-If no file extensions are provided, all files types will be searched.`,
+Supports single extensions (go) or multiple comma-separated extensions (go,ts,ex) to narrow your search 
+scope efficiently. If no file extensions are provided, all files types will be searched.`,
 	Example: `  td rg go string_to_search_for
   td rg go,ts,ex multiple_comma_separated_extensions
   td rg go "string with spaces"
