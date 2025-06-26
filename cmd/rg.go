@@ -38,3 +38,4 @@ scope efficiently. If no file extensions are provided, all files types will be s
 	DisableFlagsInUseLine: true,
 }
 
+func search(fileExtensions string, searchString string) {
