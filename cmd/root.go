@@ -12,7 +12,7 @@ var rootCmd = &cobra.Command{
 	Short: "Shortcuts for frequently used commands",
 	Long:  "td provides shortcuts for frequently used commands.",
 	Run: func(cmd *cobra.Command, args []string) {
-		// Do Stuff Here
+		cmd.Help()
 	},
 }
 
