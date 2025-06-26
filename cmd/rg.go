@@ -30,5 +30,7 @@ your search scope efficiently.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		search(args[0], args[1])
 	},
+	DisableFlagParsing:    true,
+	DisableFlagsInUseLine: true,
 }
 
