@@ -39,3 +39,13 @@ scope efficiently. If no file extensions are provided, all files types will be s
 }
 
 func search(fileExtensions string, searchString string) {
+	// Construct the command and arguments
+	args := []string{"--color=always", "--files-with-matches"}
+	if fileExtensions != "" {
+		args = append(args, "--glob=*.{"+fileExtensions+"}")
+	}
+	args = append(
+		args,
+		"--", // This is necessary to escape strings that may be interpreted as flags (e.g. --color)
+		searchString,
+	)
