@@ -28,7 +28,11 @@ scope efficiently. If no file extensions are provided, all files types will be s
 `,
 	Args: cobra.MatchAll(cobra.MinimumNArgs(1), cobra.MaximumNArgs(2)),
 	Run: func(cmd *cobra.Command, args []string) {
-		search(args[0], args[1])
+		if len(args) == 1 {
+			search("", args[0])
+		} else {
+			search(args[0], args[1])
+		}
 	},
 	DisableFlagParsing:    true,
 	DisableFlagsInUseLine: true,
