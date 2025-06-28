@@ -83,7 +83,7 @@ func search(fileExtensions string, searchString string) {
 		}
 
 		// Handle unexpected errors
-		fmt.Println("unexpected error -", err)
+		fmt.Println(err)
 		os.Exit(2)
 	}
 
