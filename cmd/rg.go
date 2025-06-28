@@ -50,6 +50,8 @@ func search(fileExtensions string, searchString string) {
 		"--", // This is necessary to escape strings that may be interpreted as flags (e.g. --color)
 		searchString,
 	)
+	cmd := exec.Command("rg", args...)
+
 
 	// Run the command
 	if err := cmd.Run(); err != nil {
