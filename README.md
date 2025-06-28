@@ -4,7 +4,7 @@ A CLI tool of shortcuts and utilities for common development tasks.
 
 ## Installation
 
-```bash
+```sh
 go install github.com/thisistonydang/td@latest
 ```
 
