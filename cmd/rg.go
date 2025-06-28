@@ -64,6 +64,16 @@ func search(fileExtensions string, searchString string) {
 	if err := cmd.Run(); err != nil {
 		// Check if it's an exit error to get the exit code
 		if exitError, ok := err.(*exec.ExitError); ok {
+			// Get the exit code
+			if status, ok := exitError.Sys().(syscall.WaitStatus); ok {
+				exitCode := status.ExitStatus()
+
+				// rg exits with code 1 when no matches are found
+				if exitCode == 1 {
+					fmt.Println("No match found")
+					os.Exit(1)
+				}
+
 	}
 
 	// Print the output captured from rg
