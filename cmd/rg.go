@@ -74,6 +74,12 @@ func search(fileExtensions string, searchString string) {
 					os.Exit(1)
 				}
 
+				// rg exits with code 2 when an error occurred
+				if exitCode == 2 {
+					fmt.Print(stderr.String())
+					os.Exit(2)
+				}
+
 	}
 
 	// Print the output captured from rg
