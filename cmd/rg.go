@@ -62,6 +62,8 @@ func search(fileExtensions string, searchString string) {
 
 	// Run the command
 	if err := cmd.Run(); err != nil {
+		// Check if it's an exit error to get the exit code
+		if exitError, ok := err.(*exec.ExitError); ok {
 	}
 
 	// Print the output captured from rg
