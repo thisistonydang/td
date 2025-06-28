@@ -40,7 +40,7 @@ scope efficiently. If no file extensions are provided, all files types will be s
 }
 
 func search(fileExtensions string, searchString string) {
-	// Construct the command and arguments
+	// Construct the rg command
 	args := []string{"--color=always", "--files-with-matches", "--sort=path"}
 	if fileExtensions != "" {
 		args = append(args, "--glob=*.{"+fileExtensions+"}")
