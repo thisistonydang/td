@@ -79,7 +79,12 @@ func search(fileExtensions string, searchString string) {
 					fmt.Print(stderr.String())
 					os.Exit(2)
 				}
+			}
+		}
 
+		// Handle unexpected errors
+		fmt.Println("unexpected error -", err)
+		os.Exit(2)
 	}
 
 	// Print the output captured from rg
