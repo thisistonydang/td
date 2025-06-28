@@ -55,3 +55,8 @@ func search(fileExtensions string, searchString string) {
 
 	// Run the command
 	if err := cmd.Run(); err != nil {
+	}
+
+	// Print the output captured from rg
+	fmt.Print(stdout.String())
+}
