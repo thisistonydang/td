@@ -62,7 +62,7 @@ func search(fileExtensions string, searchString string) {
 
 	// Run the command
 	if err := cmd.Run(); err != nil {
-		// Check if it's an exit error to get the exit code
+		// Handle exit errors from rg
 		if exitError, ok := err.(*exec.ExitError); ok {
 			// Get the exit code
 			if status, ok := exitError.Sys().(syscall.WaitStatus); ok {
