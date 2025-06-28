@@ -52,6 +52,13 @@ func search(fileExtensions string, searchString string) {
 	)
 	cmd := exec.Command("rg", args...)
 
+	// Captured stdout from rg command
+	var stdout strings.Builder
+	cmd.Stdout = &stdout
+
+	// Captured stderr from rg command
+	var stderr strings.Builder
+	cmd.Stderr = &stderr
 
 	// Run the command
 	if err := cmd.Run(); err != nil {
