@@ -56,3 +56,12 @@ func startDevEnvironment() {
 	exArgs := []string{"iex", "-S", "mix", "phx.server"}
 	jsArgs := []string{"pnpm", "dev"}
 
+	// Force project type if specified
+	switch ProjectType {
+	case "go", "golang", "air":
+		argv = goArgs
+	case "ex", "phx", "elixir", "phoenix", "iex":
+		argv = exArgs
+	case "js", "ts", "javascript", "typescript", "node", "nodejs", "npm", "pnpm":
+		argv = jsArgs
+	case "":
