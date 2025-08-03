@@ -10,3 +10,8 @@ import (
 	"github.com/thisistonydang/td/internal/td"
 )
 
+var (
+	SkipEnv     bool
+	ProjectType string
+)
+
