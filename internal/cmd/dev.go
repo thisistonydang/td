@@ -65,3 +65,9 @@ func startDevEnvironment() {
 	case "js", "ts", "javascript", "typescript", "node", "nodejs", "npm", "pnpm":
 		argv = jsArgs
 	case "":
+	default:
+		fmt.Fprintf(os.Stderr, "Unknown project type: %s\n", ProjectType)
+		fmt.Fprintln(os.Stderr, "Supported types: go, ex, js")
+		os.Exit(1)
+	}
+
