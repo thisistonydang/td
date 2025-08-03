@@ -51,3 +51,8 @@ func init() {
 }
 
 func startDevEnvironment() {
+	var argv []string
+	goArgs := []string{"air"}
+	exArgs := []string{"iex", "-S", "mix", "phx.server"}
+	jsArgs := []string{"pnpm", "dev"}
+
