@@ -10,10 +10,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func init() {
-	rootCmd.AddCommand(rgCmd)
-}
-
 var rgCmd = &cobra.Command{
 	Use:   "rg [FILE_EXTENSION(S)] SEARCH_STRING",
 	Short: "Find files containing text, optionally filtered by file extensions",
@@ -37,6 +33,10 @@ scope efficiently. If no file extensions are provided, all files types will be s
 	},
 	DisableFlagParsing:    true,
 	DisableFlagsInUseLine: true,
+}
+
+func init() {
+	rootCmd.AddCommand(rgCmd)
 }
 
 func search(fileExtensions string, searchString string) {
