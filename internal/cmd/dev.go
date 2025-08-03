@@ -50,3 +50,4 @@ func init() {
 	rootCmd.AddCommand(devCmd)
 }
 
+func startDevEnvironment() {
