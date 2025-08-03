@@ -44,3 +44,9 @@ The following commands are run for each project type:
 	},
 }
 
+func init() {
+	devCmd.Flags().BoolVarP(&SkipEnv, "skip-env", "s", false, "skip loading .env file before starting the dev environment")
+	devCmd.Flags().StringVarP(&ProjectType, "type", "t", "", "force project type (e.g. go, elixir, js)")
+	rootCmd.AddCommand(devCmd)
+}
+
