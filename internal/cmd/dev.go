@@ -85,3 +85,16 @@ func startDevEnvironment() {
 		os.Exit(1)
 	}
 
+	// Optionally load .env file
+	if !SkipEnv {
+		if td.FileExists(".env") {
+			err := godotenv.Load()
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Error loading .env file: %v\n", err)
+				os.Exit(1)
+			}
+		} else {
+			fmt.Fprintln(os.Stderr, "No .env file found, skipping environment variable loading")
+		}
+	}
+
