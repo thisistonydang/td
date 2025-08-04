@@ -11,7 +11,7 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of td",
 	Long:  "All software has versions. This is td's",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("td v0.1.0")
+		fmt.Println("td v0.1.1")
 	},
 }
 
