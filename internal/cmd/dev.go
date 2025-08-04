@@ -73,6 +73,12 @@ func startDevEnvironment() {
 			argv = exArgs
 		case td.FileExists("package.json"):
 			argv = jsArgs
+		default:
+			fmt.Fprintln(os.Stderr, "Unable to auto-detect project type")
+			fmt.Fprintln(os.Stderr, "No go.mod, mix.exs, or package.json found")
+			fmt.Fprintln(os.Stderr, "Use --type flag to force: go, ex, js")
+			os.Exit(1)
+		}
 	default:
 		fmt.Fprintf(os.Stderr, "Unknown project type: %s\n", ProjectType)
 		fmt.Fprintln(os.Stderr, "Supported types: go, ex, js")
