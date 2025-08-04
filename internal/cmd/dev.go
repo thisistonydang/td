@@ -98,3 +98,8 @@ func startDevEnvironment() {
 		}
 	}
 
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to start dev environment: %v\n", err)
+		os.Exit(1)
+	}
+}
