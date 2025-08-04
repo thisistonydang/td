@@ -98,6 +98,7 @@ func startDevEnvironment() {
 		}
 	}
 
+	err := syscall.Exec("/usr/bin/env", append([]string{"env"}, argv...), os.Environ())
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to start dev environment: %v\n", err)
 		os.Exit(1)
